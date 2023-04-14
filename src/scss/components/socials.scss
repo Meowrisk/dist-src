@@ -1,0 +1,39 @@
+.socials {
+
+  @include tablet {
+    translateX: rem(-14px);
+  }
+
+  @include phone {
+    translateX: initial;
+  }
+}
+
+.socials__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials__item {
+  margin-right: rem(14px);
+
+  @include phone {
+    margin-right: rem(18px);
+  }
+}
+
+.socials__img {
+  width: rem(20px);
+  height: rem(20px);
+  fill: #B3B3B3;
+  transition: fill 0.3s;
+
+  &:last-child {
+    margin-right: rem(0px);
+  }
+
+  &:hover {
+    fill: $black;
+  }
+}

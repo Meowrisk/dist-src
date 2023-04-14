@@ -1,0 +1,61 @@
+.menu {
+    margin: 0 rem(30px);
+  
+    @include tablet {
+      margin: 0;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      left: -100%;
+      top: 0;
+      display: flex;
+      z-index: $z-hamburger;
+      justify-content: center;
+      align-items: center;
+      background-color: #313131;
+      transition: left .3s;
+    }
+  
+    &--active {
+      left: 0;
+    }
+  }
+  
+  .menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+  
+  .menu__item {
+    margin-right: rem(22px);
+    font-weight: 700;
+    margin-top: rem(10px);
+    transition: color .3s;
+
+    &:hover {
+      color: $yellow;
+    }
+  
+    &:last-child {
+      margin-right: 0;
+    }
+  
+    @include tablet {
+      margin: 0;
+      font-style: normal;
+      font-weight: 400;
+      font-size: rem(36px);
+      line-height: 2;
+    }
+  }
+
+  .body--active--menu {
+    overflow: hidden;
+  }

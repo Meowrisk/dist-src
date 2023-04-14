@@ -1,0 +1,79 @@
+.hero {
+  background: url('../img/decor/beach.png') center / cover no-repeat #1968B1;
+  color: #fff;
+
+  @include tablet {
+    background-position-y: rem(91px);
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 91px;
+      display: block;
+      background: #1968B1;
+      z-index: 0;
+    }
+  }
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: rem(28px) 0 rem(66px);
+}
+
+.hero__text-section {
+  width: 46%;
+
+  @include tablet {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.hero__title {
+  font-size: rem(48px);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: rem(17px);
+  text-transform: uppercase;
+
+  @include tablet {
+    margin-bottom: rem(9px);
+  }
+
+  @include phone {
+    line-height: 0.9;
+    font-size: rem(40px);
+    margin-bottom: rem(12px);
+  }
+}
+
+.hero__subtitle {
+  font-size: rem(21px);
+  line-height: 1.19;
+  margin-bottom: rem(39px);
+  padding-right: 10%;
+
+  @include tablet {
+  padding: 0;
+  margin-bottom: rem(44px);
+  }
+
+  @include phone {
+    font-size: rem(18px);
+    line-height: 1.1;
+    margin-bottom: rem(43px);
+  }
+}

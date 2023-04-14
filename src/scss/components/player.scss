@@ -1,0 +1,131 @@
+.player-section {
+    background-color: #F8FAF9;
+}
+
+.player-section__container {
+    display: flex;
+    justify-content: center;
+}
+
+.player__title {
+    margin-bottom: rem(30px);
+}
+
+.player {
+    width: rem(662px);
+    height: rem(392px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.active .player__splash {
+        display: none;
+    }
+
+    &.paused {
+        .player__start {
+            position: relative;
+            border: none;
+
+            .player__start__img {
+                fill: none;
+            }
+            
+            &:after, &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                border-radius: 2px;
+                width: rem(5px);
+                top: 0;
+                bottom: 0;
+                background: #fff;
+            }
+            
+            &:after {
+                right: rem(5px);
+            }
+            
+            &:before {
+                left: rem(5px);
+            }
+        }
+    }
+}
+
+.player__start__img {
+    display: block;
+    fill: #fff;
+    width: rem(11px);
+    height: rem(16px);
+}
+
+.player__splash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background: url(../../img/decor/splash.jpg) center center/cover no-repeat;
+
+    &__img {
+        width: rem(75px);
+        height: rem(110px);
+        fill: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+    }
+}
+
+.player__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: rem(35px);
+    background-color: #404040;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17px;
+}
+
+.player__playback {
+    height: rem(16px);
+    width: rem(446px);
+    position: relative;
+
+    &:before {
+        content: '';
+        height: 4px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        display: block;
+        transform: translateY(-50%);
+    }
+
+    &-button {
+        background-color: #fff;
+        border-radius: 50%;
+        border: none;
+        width: rem(12px);
+        height: rem(12px);
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 0;
+    }
+}
+
+.player__duration {
+    color: #fff;
+}
+

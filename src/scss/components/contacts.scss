@@ -1,0 +1,51 @@
+.contacts {
+  font-style: normal;
+
+  @include phone {
+    margin-bottom: rem(19px);
+  }
+}
+
+.contacts__phone.header__contacts__phone {
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.contacts__address {
+  font-size: rem(21px);
+  line-height: 1.14;  
+
+  @include phone {
+    display: block;
+    margin-bottom: rem(10px);
+  }
+}
+
+.contacts__phone {
+  font-size: rem(22px);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 0.87;
+}
+
+.phone__icon--elem {
+  fill: #fff;
+  width: 13px;
+  height: 13px;
+  margin-right: rem(6px);
+  flex-shrink: 0;
+}
+
+.contacts__phone.footer__contacts__phone {
+  
+  @include tablet {
+    display: flex;
+  }
+
+  @include phone {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+
+  @include tablet {
+    align-items: center;
+  }
+}
+
+.header__contacts {
+  margin-top: rem(10px);
+}
+
+.logo__img {
+
+  @include tablet {
+    z-index: $z-header-tablet;
+    padding: 0 rem(8px);
+  }
+
+  @include phone {
+    padding: 0;
+  }
+}
+
+
+
+
+

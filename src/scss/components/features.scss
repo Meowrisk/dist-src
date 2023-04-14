@@ -1,0 +1,15 @@
+.features {
+  display: flex;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.features__item {
+  margin-right: rem(33px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

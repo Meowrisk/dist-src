@@ -1,0 +1,62 @@
+.products-menu-section {
+    position: relative;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/decor/surf-wallpapers.jpg) center center / cover no-repeat;
+    color: #fff;
+    justify-content: flex-start;
+}
+
+.products-menu__title {
+    color: inherit;
+    text-align: left;
+    padding: rem(109px) rem(84px);
+}
+
+.products-menu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.products-menu__item {
+    display: flex;
+}
+
+.products-menu__button {
+    color: inherit;
+    min-width: 100px;
+    background: center center / cover no-repeat;
+    position: relative;
+}
+
+.products-menu__button--active.products-menu__desc {
+    opacity: 1;
+}
+
+.products-menu__button-text {
+    position: absolute;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: 0 0;
+    left: 50%;
+    bottom: rem(39px);
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: rem(48px);
+    line-height: 1.2;
+}
+
+.products-menu__content {
+    background: rgba(18, 19, 20, 0.8);
+    backdrop-filter: blur(5px);
+    width: 0;
+    overflow: hidden;
+    transition: width .3s linear;
+}
+
+.products-menu__desc {
+    font-weight: 400;
+    font-size: rem(16px);
+    line-height: 1.5;
+    padding: rem(31px) rem(80px) 0 rem(38px);
+}

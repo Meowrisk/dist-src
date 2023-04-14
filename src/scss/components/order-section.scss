@@ -1,0 +1,13 @@
+.order-section {
+  z-index: 1;
+  position: relative;
+  background: url('../img/decor/wave.png') 0 0 / cover no-repeat;
+}
+
+.order-section__title {
+  margin-bottom: rem(59px);
+
+  @include tablet {
+    margin-bottom: rem(30px);
+  }
+}

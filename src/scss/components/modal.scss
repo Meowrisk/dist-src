@@ -1,0 +1,33 @@
+.modal {
+    display: none;
+
+    &.error-modal {
+        .modal__content{
+            color: red;
+        }
+    }
+
+    &.fancybox-content {
+        padding: 0 !important;
+    }
+
+    .fancybox-button {
+        display: none;
+    }
+}
+
+.modal__container {
+    background: #fff;
+    padding: rem(37px) rem(66px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__content {
+    margin-bottom: rem(18px);
+    color: #000;
+    font-weight: 500;
+    font-size: rem(18px);
+    line-height: 1.33;
+}

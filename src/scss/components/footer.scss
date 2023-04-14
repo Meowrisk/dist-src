@@ -1,0 +1,23 @@
+.footer {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.footer__phone__icon--elem {
+  fill: $black;
+}
+
+.footer__container {
+  padding: rem(18px) 0 rem(18px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include phone {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

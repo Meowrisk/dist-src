@@ -1,0 +1,112 @@
+.form {
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+    max-width: 466px;
+    margin: 0 auto;
+  }
+
+  @include phone {
+
+  }
+}
+
+.form__col {
+  flex: 1;
+  margin-right: rem(27px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include tablet {
+    margin-right: 0;
+  }
+}
+
+.form__row {
+  display: flex;
+  margin-bottom: rem(13px);
+
+  
+  @include tablet {
+    margin-bottom: rem(14px);
+  }
+
+  &--textarea {
+    margin-bottom: rem(30px);
+
+    @include tablet {
+      margin-bottom: rem(19px);
+    }
+  }
+}
+
+.form__block {
+  flex: 1;
+  margin-right: rem(16px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.form__title {
+  line-height: 1.22;
+  margin-bottom: rem(2px);
+}
+
+.form__input {
+  width: 100%;
+  border: none;
+  padding: rem(15px) rem(12px);
+  border: solid rem(3px) transparent;
+  border-radius: rem(4px);
+
+  @include tablet {
+    padding: rem(4px) rem(12px);
+  }
+
+  &--textarea {
+    height: rem(152px);
+    resize: none;
+
+    @include tablet {
+      height: rem(82px);
+    }
+  }
+
+  &:focus {
+    border-color: $yellow;
+    outline: none;
+  }
+}
+
+.input-error {
+  border-color: red;
+}
+
+.form__controls {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: rem(19px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include phone {
+    justify-content: center;
+  }
+}
+
+.form__controls-radio {
+  margin-right: rem(15px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+

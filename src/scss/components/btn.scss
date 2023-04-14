@@ -1,0 +1,51 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(16px);
+  font-weight: 800;
+  padding: rem(21px) rem(41px);
+  text-transform: uppercase;
+  border-radius: rem(100px);
+  line-height: 1;
+  border: none;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+
+  &--yellow {
+    background: $yellow;
+    color: #000;
+
+    &:hover {
+      color: $yellow;
+      background: #000;
+    }
+  }  
+
+    &--transparent {
+      background: transparent;
+      color: #fff;
+      text-transform: none;
+      font-weight: 400;
+      font-size: rem(18px);
+      padding: rem(21px) rem(18px);
+
+      &:hover {
+        color: #000;
+        background: transparent;
+      }
+    }
+
+    @include phone {
+      font-size: rem(19px);
+      padding: rem(21px) rem(36px)
+    }
+}
+
+.form__btns {
+  display: flex;
+
+  @include tablet {
+    justify-content: center;
+  }
+}
