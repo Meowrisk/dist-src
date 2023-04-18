@@ -1,8 +1,8 @@
 const { src, dest, task, series, watch, parallel } = require('gulp');
 const clean = require('gulp-clean');
-const sass = require('gulp-sass')(require('sass'));
+const sass = require('gulp-sass')(require('dart-sass'));
 const concat = require('gulp-concat');
-// const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create();
 // const reload = browserSync.reload;
 const sassGlob = require('gulp-sass-glob');
 // const autoprefixer = require('gulp-autoprefixer');
@@ -22,12 +22,24 @@ const {DIST_PATH, SRC_PATH, STYLES_LIBS, JS_LIBS} = require('./gulp.config');
 
 
 task('clean', () => {
-    return src(`${DIST_PATH}/**/*`, { read: false }).pipe(clean());
+    return src(`${DIST_PATH}/**/*.*`, { read: false }).pipe(clean());
 });
 
 task('copy:html', () => {
     return src(`${SRC_PATH}/*.html`)
         .pipe(dest(DIST_PATH));
+    // .pipe(reload({ stream: true }));
+});
+
+task('copy:img', () => {
+    return src(`${SRC_PATH}/img/**/*.*`)
+        .pipe(dest(`${DIST_PATH}/img`));
+    // .pipe(reload({ stream: true }));
+});
+
+task('copy:video', () => {
+    return src(`${SRC_PATH}/video/*.*`)
+        .pipe(dest(`${DIST_PATH}/video`));
     // .pipe(reload({ stream: true }));
 });
 
@@ -46,7 +58,7 @@ task('styles', () => {
         .pipe(gulpif(env === 'prod', gcmq()))
         .pipe(gulpif(env === 'prod', cleanCSS()))
         // .pipe(gulpif(env === 'dev', sourcemaps.write()))
-        .pipe(dest(DIST_PATH));
+        .pipe(dest(`${DIST_PATH}/css`));
 });
 
 
@@ -83,14 +95,14 @@ task('scripts', () => {
 //         .pipe(dest(`$DIST_PATH/images/icons`))
 // });
 
-// task('server', () => {
-//     browserSync.init({
-//         server: {
-//             baseDir: "{`$DIST_PATH`}"
-//         },
-//         open: true
-//     });
-// });
+task('server', () => {
+    browserSync.init({
+        server: {
+            baseDir: `${DIST_PATH}/`
+        },
+        open: true
+    });
+});
 
 task('watch', () => {
     watch('./src/scss/**/*.scss', series('styles'));
@@ -100,8 +112,8 @@ task('watch', () => {
 });
 
 
-task('default', series('clean', parallel('copy:html', 'styles', 'scripts'), 'watch'));
+task('default', series('clean', parallel('copy:html', 'copy:img', 'copy:video', 'styles', 'scripts','watch', 'server')));
 //, 'server', 'icons'
-task('build', series('clean', parallel('copy:html', 'styles', 'scripts'),));
+task('build', series('clean', parallel('copy:html', 'copy:img', 'copy:img', 'styles', 'scripts'),));
 
 

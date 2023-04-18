@@ -13,6 +13,9 @@
 }
 
 .logo__img {
+  color: #fff;
+  width: rem(56px);
+  height: rem(40px);
 
   @include tablet {
     z-index: $z-header-tablet;

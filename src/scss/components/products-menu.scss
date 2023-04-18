@@ -17,17 +17,34 @@
     top: 0;
     bottom: 0;
     display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .products-menu__item {
     display: flex;
+
+    @include phone {
+        &--active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+    }
 }
 
 .products-menu__button {
     color: inherit;
-    min-width: 100px;
+    width: 100px;
     background: center center / cover no-repeat;
     position: relative;
+
+    @include phone {
+        width: rem(90px);
+    }
 }
 
 .products-menu__button--active.products-menu__desc {

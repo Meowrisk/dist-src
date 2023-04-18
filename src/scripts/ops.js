@@ -3,7 +3,7 @@ const display = $('.main-content');
 const sideMenu = $('.fixed-menu');
 const menuItems = sideMenu.find('.fixed-menu__item');
 
-const mobileDetect = new mobileDetect(window.navigator.userAgent);
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile();
 
 let inScroll = false;
@@ -131,6 +131,8 @@ if (isMobile) {
 
             if (direction === 'up') scrollDirection = 'next';
             if (direction === 'down') scrollDirection = 'prev';
+
+            if (!scrollDirection) return;
 
             scroller[scrollDirection]();
         },

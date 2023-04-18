@@ -23,7 +23,9 @@ const setItemWidth = (item, width) => {
   const itemContent = item.nextElementSibling;
   const itemText = itemContent.firstElementChild;
   itemContent.style.width = `${width}px`;
-  itemText.style.width = `${width}px`;
+  if (width !== 0) {
+    itemText.style.width = `${width}px`;
+  }
 };
 
 const closeItem = (item) => {
