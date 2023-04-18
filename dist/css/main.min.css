@@ -1905,7 +1905,7 @@ a {
   right: 0;
   bottom: 0;
   cursor: pointer;
-  background: url(../../img/decor/splash.jpg) center center/cover no-repeat;
+  background: url(../img/decor/splash.jpg) center center/cover no-repeat;
 }
 .player__splash__img {
   width: 4.1666666667rem;
