@@ -69,10 +69,13 @@ function stopInterval() {
 }
 
 function setVideoDuration() {
+    let playImg = document.querySelector('.player__splash__img');
     if (video.paused) {
         video.play();
+        playImg.closest('.player__splash').classList.add('player--active');
     } else {
         video.pause();
+        playImg.closest('.player__splash').classList.remove('player--active');
     }
 
     video.currentTime = durationControl.value;
